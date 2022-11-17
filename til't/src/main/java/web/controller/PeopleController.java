@@ -48,7 +48,7 @@ public class PeopleController {
 		if (bindingResult.hasErrors())
 			return "new";
 		us.addUser(user);
-		return "redirect:/info";
+		return "redirect:/people";
 	}
 
 	@GetMapping("/{id}/edit")
@@ -63,12 +63,12 @@ public class PeopleController {
 		if(bindingResult.hasErrors())
 			return "edit";
 		us.updateUser(id, user);
-		return "redirect:/info";
+		return "redirect:/people";
 	}
 	@DeleteMapping("/{id}")
 	public String delete (@PathVariable("id") int id) {
 		us.removeUser(id);
-		return "redirect:/info";
+		return "redirect:/people";
 	}
 }
 
