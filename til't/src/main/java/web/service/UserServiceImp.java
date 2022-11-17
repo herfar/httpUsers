@@ -17,22 +17,27 @@ public class UserServiceImp implements UserService {
     public UserServiceImp (UserDao userDao) {
         this.userDao = userDao;
     }
+    @Transactional
     @Override
     public void addUser(User user) {
         userDao.addUser(user);
     }
+    @Transactional
     @Override
     public List<User> informationOfPeoples() {
         return userDao.informationOfPeoples();
     }
+    @Transactional
     @Override
     public void removeUser(int id) {
         userDao.removeUser(id);
     }
+    @Transactional
     @Override
     public User updateUser(int id, User user) {
         return userDao.updateUser(id, user);
     }
+    @Transactional
     @Override
     public User getUserById(int id) {
         return userDao.getUserById(id);
